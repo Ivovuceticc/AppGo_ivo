@@ -20,6 +20,7 @@ func ConectarBD() *mongo.Client {
 		log.Fatal(err.Error())
 		return client
 	}
+	//Nada me asegura que con connect se pueda conectar bien la bd, por eso uso ping.
 	err = client.Ping(context.TODO(), nil)
 	if err != nil {
 		log.Fatal(err.Error())

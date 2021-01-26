@@ -11,7 +11,10 @@ import (
 	"github.com/rs/cors"
 )
 
-/*Manejadores: seteo mi puerto, el handler y pongo a escuchar al servidor*/
+/*-En caso de que sólo especifiquemos, por ejemplo, 127.0.0.1:8080, el servidor sólo respondería a peticiones que se hagan en la computadora que es al mismo tiempo el servidor, no desde otras.
+  -Si queremos que cualquier pc se conecte sabiendo mi ip, debo poner "":8080" o cualquier otro puerto que se pueda usar. */
+
+/*Manejadores seteo mi puerto, el handler y pongo a escuchar al servidor*/
 func Manejadores() {
 	router := mux.NewRouter()
 	router.HandleFunc("/registro", middlew.ChequeoBD(routers.Registro)).Methods("POST")
